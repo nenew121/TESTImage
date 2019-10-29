@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 	<link href="/index.css" media="screen" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" href="/index.js"></script>
+	<script type="text/javascript" src="index.php"></script>
 </head>
 <body>
     <span>Type "santa"</span>

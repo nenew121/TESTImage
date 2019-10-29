@@ -52,8 +52,6 @@ var rndom = function(start, end) {
   return Math.floor(Math.random() * end) + start
 };
 
-cheet('s a n t a', makesantafly);
-
 // https://jsfiddle.net/loktar/UdyN6/
 (function() {
   var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||

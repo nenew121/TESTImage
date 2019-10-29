@@ -2,43 +2,13 @@
 <html lang="en">
 <style>
 html, body {
-  background-image: linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
-    background-image: -o-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
-    background-image: -moz-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
-    background-image: -webkit-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
-    background-image: -ms-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
-    
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0, rgb(105,173,212)),
-        color-stop(0.84, rgb(23,82,145))
-    );
-  overflow:hidden;
+  margin:0;
+  padding:0;
+  background-color:#368ee0;
 }
 
-.santa {
-  background-image: url(http://www.netanimations.net/Animated_santa_reindeer_flying.gif);
-  width: 400px;
-  height: 200px;
-  position: absolute;
-  
-}
-
-.hidden {
-  display: none;
-}
-
-span {
-  color: white;
-  font-family: Consolas, monaco, monospace;
-  font-size: 2em;
-  margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+canvas {
+  display: block;
 }
 </style>
 <head>
@@ -48,177 +18,197 @@ span {
     <title>Document</title>
 </head>
 <body>
-    <span>Type "santa"</span>
-	<canvas id="canvas"></canvas>
-	<div class="santa hidden"></div>
+  <canvas id="particle_canvas"></canvas>
 </body>
 </html>
 <script type="text/javascript">
-var currentpos = {
-  x: 0,
-  y: 0
-};
+window.addEventListener('resize', function()
+                        {
+                          jsCanvasSnow.resize(window.innerWidth, window.innerHeight);
+                          jsCanvasSnow.init( "particle_canvas", options );
+                        }, false);
 
-var makesantafly = function() {
-  var santael = document.querySelector(".santa");
-  var scrollY = window.pageYOffset;
-  var viewportY = document.documentElement.clientHeight;
-  var viewportX = document.documentElement.clientWidth;
-
-  var startpos = {
-    x: -400,
-    y: rndom(scrollY, scrollY + viewportY)
+window.addEventListener('load', function()
+{
+  //var options = {};
+  var options = {
+    'amount' : 1000,
+    'size' : [8,20],				
+    'rotation' : [1, 5],
+    'speed' : [40, 80],
+    'swing' : [0.1, 1],				
+    'amplitude' : [30, 50],
+    'alpha' : [0.1,0.95],
+    'images' : ["https://i.imgur.com/jbSVFgy.png", "https://i.imgur.com/TT2lmN4.png","https://i.imgur.com/do8589m.png","https://i.imgur.com/3BxEO8i.png"]
   };
 
-  var endpos = {
-    x: viewportX,
-    y: rndom(scrollY, scrollY + viewportY)
-  };
+  jsCanvasSnow.init( "particle_canvas", options );
+  jsCanvasSnow.start();                          
+}, false);
 
-  santael.classList.remove("hidden");
-
-  var dx = endpos.x - startpos.x;
-  var dy = endpos.y - startpos.y;
-  var angle = Math.atan2(dy, dx);
-  var magnitude = 4.0;
-  var velX = Math.cos(angle) * magnitude;
-  var velY = Math.sin(angle) * magnitude;
-
-  currentpos = startpos;
-  var refreshIntervalId = setInterval(function() {
-    mX = 200;
-    mY = 100;
-    currentpos.x = currentpos.x + velX;
-    currentpos.y = currentpos.y + velY;
-    santael.style.top = currentpos.y + "px";
-    santael.style.left = currentpos.x + "px";
-
-    if (currentpos.x > endpos.x) {
-      clearInterval(refreshIntervalId);
-      santael.classList.add("hidden");
-      currentpos = {
-        x: 0,
-        y: 0
-      };
-    }
-  }, 6);
-};
-
-var rndom = function(start, end) {
-  return Math.floor(Math.random() * end) + start
-};
-
-cheet('s a n t a', makesantafly);
-
-// https://jsfiddle.net/loktar/UdyN6/
-(function() {
-  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
-    function(callback) {
-      window.setTimeout(callback, 1000 / 60);
-    };
-  window.requestAnimationFrame = requestAnimationFrame;
-})();
-
-var flakes = [],
-  canvas = document.getElementById("canvas"),
-  ctx = canvas.getContext("2d"),
-  flakeCount = 200,
-  mX = -100,
-  mY = -100
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-function snow() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (var i = 0; i < flakeCount; i++) {
-    var flake = flakes[i],
-      x = mX,
-      y = mY,
-      minDist = 150,
-      x2 = flake.x,
-      y2 = flake.y;
-
-    var dist = Math.sqrt((x2 - x - currentpos.x) * (x2 - x - currentpos.x) + (y2 - y - currentpos.y) * (y2 - y - currentpos.y)),
-      dx = x2 - x - currentpos.x,
-      dy = y2 - y - currentpos.y;
-
-    if (dist < minDist) {
-      var force = minDist / (dist * dist),
-        xcomp = (x - x2 - currentpos.x) / dist,
-        ycomp = (y - y2 - currentpos.y) / dist,
-        deltaV = force / 2;
-
-      flake.velX -= deltaV * xcomp;
-      flake.velY -= deltaV * ycomp;
-
-    } else {
-      flake.velX *= .98;
-      if (flake.velY <= flake.speed) {
-        flake.velY = flake.speed
-      }
-      flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
-    }
-
-    ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
-    flake.y += flake.velY;
-    flake.x += flake.velX;
-
-    if (flake.y >= canvas.height || flake.y <= 0) {
-      reset(flake);
-    }
-
-    if (flake.x >= canvas.width || flake.x <= 0) {
-      reset(flake);
-    }
-
-    ctx.beginPath();
-    ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  requestAnimationFrame(snow);
-};
-
-function reset(flake) {
-  flake.x = Math.floor(Math.random() * canvas.width);
-  flake.y = 0;
-  flake.size = (Math.random() * 3) + 2;
-  flake.speed = (Math.random() * 1) + 0.5;
-  flake.velY = flake.speed;
-  flake.velX = 0;
-  flake.opacity = (Math.random() * 0.5) + 0.3;
+function jsParticle(origin, velocity, size, amplitude, rspeed, alpha, image)
+{
+	this.origin = origin;
+	this.position = new Vector2(origin.x, origin.y);
+	this.velocity = velocity || new Vector2(0, 0);
+	this.size = size;
+	this.rspeed = rspeed;
+	this.amplitude = amplitude;
+	this.alpha = alpha;
+	this.image = image;
+	
+	this.dx = Math.random() * 100;
+	this.rotation = Math.random() * 360;
+	
+	this.update = function(delta_time)
+	{
+		this.dx += this.velocity.x*delta_time;
+		this.position.y += this.velocity.y * delta_time;
+		this.position.x = this.origin.x + (this.amplitude * Math.sin(this.dx));
+		this.rotation += this.rspeed*delta_time;
+	}
 }
 
-function init() {
-  for (var i = 0; i < flakeCount; i++) {
-    var x = Math.floor(Math.random() * canvas.width),
-      y = Math.floor(Math.random() * canvas.height),
-      size = (Math.random() * 3) + 2,
-      speed = (Math.random() * 1) + 0.5,
-      opacity = (Math.random() * 0.5) + 0.3;
+var jsCanvasSnow = 
+{
+	canvas : null,
+	ctx : null,
+	particles : [],
+	running : false,
+	
+	pImageObjects : [],
+	
+	start_time : 0,
+	frame_time : 0,
 
-    flakes.push({
-      speed: speed,
-      velY: speed,
-      velX: 0,
-      x: x,
-      y: y,
-      size: size,
-      stepSize: (Math.random()) / 30,
-      step: 0,
-      angle: 180,
-      opacity: opacity
-    });
-  }
+	init : function( canvas_id, options )
+	{
+		// use the container width and height
+		this.canvas = document.getElementById(canvas_id);
+		this.ctx = this.canvas.getContext('2d');
+		this.resize(window.innerWidth, window.innerHeight);
+		
+		// default values
+		this.pAmount = options.amount || 500;
+		this.pSize = options.size || [8 , 26];
+		this.pRotation = options.rotation || [-5, 5];
+		this.pSwing = options.swing || [0.1, 1];
+		this.pSpeed = options.speed || [40, 100],
+		this.pAmplitude = options.amplitude || [20, 50];
+		this.pAlpha = options.alpha || [0.25,1];
+		this.pImageNames = options.images || [];
+		
+		// initialize all the images
+		for (var i = 0 ; i < this.pImageNames.length ; i++)
+		{
+			var image = new Image();
+			image.src = this.pImageNames[i];
+			this.pImageObjects.push(image);
+		}
+		
+		this._init_particles();
+	},
+	
+	start : function()
+	{
+		this.running = true;
+		this.start_time = this.frame_time = microtime();
+		this._loop();
+	},
+	
+	stop : function()
+	{
+		this.running = false;
+	},
+	
+	resize : function(w, h)
+	{
+		this.canvas.width = w;
+		this.canvas.height = h;
+	},
+	
+	_loop : function()
+	{
+		if ( jsCanvasSnow.running )
+		{
+			jsCanvasSnow._clear();
+			jsCanvasSnow._update();
+			jsCanvasSnow._draw();
+			jsCanvasSnow._queue();
+		}
+	},	
+	
+	_init_particles : function()
+	{
+		// clear the particles array
+		this.particles.length = 0;
+		
+		for ( var i = 0 ; i < this.pAmount ; i++) 
+		{
+			var origin = new Vector2(frand(0, this.canvas.width), frand(-this.canvas.height, 0));
+			var velocity = new Vector2(frand(this.pSwing[0],this.pSwing[1]), frand(this.pSpeed[0],this.pSpeed[1]));
+			var size = frand(this.pSize[0], this.pSize[1]);
+			var amplitude = frand(this.pAmplitude[0], this.pAmplitude[1]);
+			var rspeed = frand(this.pRotation[0], this.pRotation[1]) * ((Math.random()<0.5) ? -1 : 1);
+			var alpha = frand(this.pAlpha[0], this.pAlpha[1]);
+			var image = (this.pImageObjects.length > 0) ? irand(0, this.pImageObjects.length-1) : -1;
+			
+			this.particles.push(new jsParticle(origin, velocity, size, amplitude, rspeed, alpha, image));
+		}
+	},
 
-  snow();
-};
+	_update : function()
+	{
+		var now_time = microtime();
+		var delta_time = now_time - this.frame_time;
+		
+		for ( var i = 0 ; i < this.particles.length ; i++)
+		{
+			var particle = this.particles[i];
+			particle.update(delta_time);
+			
+			if (particle.position.y-particle.size > this.canvas.height)
+			{
+				particle.position.y = -particle.size*2;
+				particle.position.x = particle.origin.x = Math.random() * this.canvas.width;			
+			}			
+		}
+		
+		this.frame_time = now_time;
+	},
+	
+	_draw : function()
+	{
+		this.ctx.fillStyle = 'rgb(255,255,255)';
+		
+		for ( var i = 0 ; i < this.particles.length ; i++)
+		{
+			var particle = this.particles[i];
+			var center = -(particle.size/2);			
+	
+			this.ctx.save();
+			this.ctx.translate(particle.position.x, particle.position.y);
+			this.ctx.rotate(particle.rotation);
+			this.ctx.globalAlpha = this.particles[i].alpha;			
+			
+			if ( particle.image == -1)
+				this.ctx.fillRect(center, center, particle.size, particle.size);
+			else
+				this.ctx.drawImage(this.pImageObjects[particle.image], center, center, particle.size, particle.size);
+								   
+			this.ctx.restore();
+		}
+	},
+	
+	_clear : function()
+	{
+		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	},
+	
+	_queue : function()
+	{
+		window.requestAnimationFrame( jsCanvasSnow._loop );
+	},
+}
 
-canvas.addEventListener("mousemove", function(e) {
-  mX = e.clientX,
-    mY = e.clientY
-});
-
-init();
 </script>

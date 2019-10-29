@@ -9,9 +9,7 @@
 	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-    <span>Type "santa"</span>
-	<canvas id="canvas"></canvas>
-	<div class="santa hidden"></div>
+  <canvas id="particle_canvas"></canvas>
 </body>
 </html>
 

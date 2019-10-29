@@ -6,355 +6,566 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 	<link href="/index.css" media="screen" rel="stylesheet" type="text/css" />
-	
+	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
- .container
-  .shelf-one
-    .shelf.shadow
-      .shelf-hooks
-      .base
-      .crystal-ball
-        .stand
-        .ball
-      .bottle.bottle-1
-        .bowl
-        .bottle-neck
-        .bottle-top
-      .drippings
-        .drip
-      .bottle.bottle-3
-        .bowl
-        .bottle-neck
-        .bottle-top
-    .shelf
-      .shelf-hooks
-      .base
-      .crystal-ball
-        .stand
-        .ball
-          .ball-highlight
-      .bottle.bottle-1
-        .bowl
-          .bowl-in
-            .liquid
-              - for (var b = 0; b < 5; b++)
-                .bottle-bubble
-            .bottle-reflection
-        .bottle-neck
-        .bottle-top
-      .drippings
-        .drip
-      .bottle.bottle-3
-        .bowl
-          .bowl-in
-            .liquid
-        .bottle-neck
-        .bottle-top
-  .shelf-two
-    .shelf.shadow
-      .shelf-hooks
-      .base
-      .skull
-        .head
-        .teeth
-      .candles
-        .candle
-          .candle-wax
-          .flame
-            .flame-in
-        .candle
-          .candle-wax
-          .flame
-            .flame-in
-    .shelf
-      .shelf-hooks
-      .base
-      .skull
-        .head
-          .skull-stain
-          .eye
-          .eye
-          .nose
-        .teeth
-          .tooth
-          .tooth
-          .tooth
-      .candles
-        .candle
-          .candle-wax
-            .wax-reflection
-            .wax-reflection-top
-          .candle-reflection
-          .flame
-            .flame-in
-        .candle
-          .candle-wax
-            .wax-reflection
-            .wax-reflection-top
-          .candle-reflection
-          .flame
-            .flame-in
-  .shelf-three
-    .shelf.shadow
-      .shelf-hooks
-      .base
-      .spider-group
-        .thread
-        .spider
-          - for (var l = 0; l < 6; l++)
-            .spider-leg
-      .books
-        .book
-        .book
-        .book
-        .book-up
-      .candy-bowl
-        .candy-bowl-top
-    .shelf
-      .shelf-hooks
-      .base
-      .spider-group
-        .thread
-        .spider
-          - for (var l = 0; l < 6; l++)
-            .spider-leg
-      .books
-        .book
-          .details
-        .book
-          .details
-        .book
-          .details
-        .book-up
-          .details
-      .candy-bowl
-        .candy-bowl-top
-        .candy-bowl-in
-          - for (var c = 0; c < 4; c++)
-            .candy-1
-          - for (var c = 0; c < 4; c++)
-            .candy-2
-              .candy-reflection
-          - for (var c = 0; c < 4; c++)
-            .candy-3
-          - for (var c = 0; c < 4; c++)
-            .candy-4
-              .candy-reflection
-        .candy-bowl-reflection
-
-  .witch.shadow
-    .middle
-    .right-arm
-      .bottle.bottle-1
-        .bowl
-          .bowl-in
-        .bottle-neck
-        .bottle-top
-          .pink-liquid
-      .right-hand
-    .head-group
-      .hair-back
-        - for (var h = 0; h < 10; h++)
-          .hair
-      .witch-head
-      .hat
-        .hat-top
-          .hat-top-in
-        .hat-band
-        .hat-bottom
-  .witch
-    .bottom
-    .middle
-    .right-arm
-      .bottle.bottle-1
-        .bowl
-          .bowl-in
-            .liquid
-            .bottle-reflection
-        .bottle-neck
-        .bottle-top
-          .pink-liquid
-      .right-hand
-    .head-group
-      .neck
-      .hair-back
-        - for (var h = 0; h < 10; h++)
-          .hair
-        .witch-ears
-          .witch-ear
-          .witch-ear
-      .witch-head
-        .cheeks
-        .eyes
-        .eyes
-        .mouth
-        .mouth-hidden
-        .hair-front
-      .hat
-        .hat-top
-          .hat-top-in
-        .hat-band
-        .hat-stars
-          .hat-star
-          .hat-star
-          .hat-star
-        .hat-band-top
-        .hat-bottom
-
-  .light
-  .cauldron.shadow
-    .left-arm
-    .stick-group
-      .stick
-      .hand
-    .bubbles
-      - for (var b = 0; b < 8; b++)
-        .bubble
-    .cauldron-top
-  .cauldron
-    .left-arm
-    .stick-group
-      .stick
-      .hand
-    .handle
-    .bubbles
-      - for (var b = 0; b < 8; b++)
-        .bubble
-    .cauldron-top
-  .window-group.shadow
-    .window
-  .window-group
-    .window
-      .window-reflections
-      .window-reflections
-      .window-reflections      
-      .window-in
-        .ghost-group
-          .ghost
-            .bottom
-              .bottom-part
-              .bottom-part
-              .bottom-part
-            .eyes
-        .moon
-          .craters
-        .stars
-          - for (var s = 0; s < 5; s++)
-            .star
-    .cat.highlight
-      .cat-head
-        .ear
-          .ear-in
-        .ear
-          .ear-in
-      .cat-body
-      .cat-paw
-      .cat-neck
-        .neck
-          .neck
-            .neck
-              .neck
-                .neck
-                  .neck
-                    .neck
-                      .neck
-                        .neck            
-    .cat
-      .cat-head
-        .ear
-          .ear-in
-        .ear
-          .ear-in
-      .cat-body
-      .cat-paw
-      .cat-neck
-        .neck
-          .neck
-            .neck
-              .neck
-                .neck
-                  .neck
-                    .neck
-                      .neck
-                        .neck
-      .cat-tail.highlight
-        .tail
-          .tail
-            .tail
-              .tail
-                .tail
-                  .tail
-                    .tail
-                      .tail.last
-      .cat-tail.shadow
-        .tail
-          .tail
-            .tail
-              .tail
-                .tail
-                  .tail
-                    .tail
-                      .tail.last
-      .cat-tail
-        .tail
-          .tail
-            .tail
-              .tail
-                .tail
-                  .tail
-                    .tail
-                      .tail.last
-
-  .broom.shadow
-    .broom-stick
-      .bat
-        .bat-legs
-        .bat-body
-        .bat-wing
-        .bat-wing
-        .bat-ear
-        .bat-ear
-    .broom-hook
-    .broom-hook
-    .broom-hair
-      .broom-hair-top
-      .broom-hair-bottom
-      .broom-hair-band
-  .broom
-    .broom-stick
-      .broom-stick-shadow
-      .bat
-        .bat-legs
-        .bat-body
-        .bat-wing
-        .bat-wing
-        .bat-ear
-        .bat-ear
-    .broom-hook
-    .broom-hook
-    .broom-hair
-      .broom-hair-top
-      .broom-hair-bottom
-      .broom-lines
-      .broom-hair-bottom-reflection
-      .broom-hair-band
-      .broom-details
-      .broom-details
-
-
-  .pumpkins.shadow
-    .pumpkin
-      .top
-    .pumpkin
-      .top
-  .pumpkins
-    .pumpkin
-      .top
-    .pumpkin
-      .top
-    //- .pumpkin
-    //-   .top
-
+  
+<div class="container">
+  <div class="shelf-one">
+    <div class="shelf shadow">
+      <div class="shelf-hooks"></div>
+      <div class="base"></div>
+      <div class="crystal-ball">
+        <div class="stand"></div>
+        <div class="ball"></div>
+      </div>
+      <div class="bottle bottle-1">
+        <div class="bowl"></div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-top"></div>
+      </div>
+      <div class="drippings">
+        <div class="drip"></div>
+      </div>
+      <div class="bottle bottle-3">
+        <div class="bowl"></div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-top"></div>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="shelf-hooks"></div>
+      <div class="base"></div>
+      <div class="crystal-ball">
+        <div class="stand"></div>
+        <div class="ball">
+          <div class="ball-highlight"></div>
+        </div>
+      </div>
+      <div class="bottle bottle-1">
+        <div class="bowl">
+          <div class="bowl-in">
+            <div class="liquid">
+              <div class="bottle-bubble"></div>
+              <div class="bottle-bubble"></div>
+              <div class="bottle-bubble"></div>
+              <div class="bottle-bubble"></div>
+              <div class="bottle-bubble"></div>
+            </div>
+            <div class="bottle-reflection"></div>
+          </div>
+        </div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-top"></div>
+      </div>
+      <div class="drippings">
+        <div class="drip"></div>
+      </div>
+      <div class="bottle bottle-3">
+        <div class="bowl">
+          <div class="bowl-in">
+            <div class="liquid"></div>
+          </div>
+        </div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-top"></div>
+      </div>
+    </div>
+  </div>
+  <div class="shelf-two">
+    <div class="shelf shadow">
+      <div class="shelf-hooks"></div>
+      <div class="base"></div>
+      <div class="skull">
+        <div class="head"></div>
+        <div class="teeth"></div>
+      </div>
+      <div class="candles">
+        <div class="candle">
+          <div class="candle-wax"></div>
+          <div class="flame">
+            <div class="flame-in"></div>
+          </div>
+        </div>
+        <div class="candle">
+          <div class="candle-wax"></div>
+          <div class="flame">
+            <div class="flame-in"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="shelf-hooks"></div>
+      <div class="base"></div>
+      <div class="skull">
+        <div class="head">
+          <div class="skull-stain"></div>
+          <div class="eye"></div>
+          <div class="eye"></div>
+          <div class="nose"></div>
+        </div>
+        <div class="teeth">
+          <div class="tooth"></div>
+          <div class="tooth"></div>
+          <div class="tooth"></div>
+        </div>
+      </div>
+      <div class="candles">
+        <div class="candle">
+          <div class="candle-wax">
+            <div class="wax-reflection"></div>
+            <div class="wax-reflection-top"></div>
+          </div>
+          <div class="candle-reflection"></div>
+          <div class="flame">
+            <div class="flame-in"></div>
+          </div>
+        </div>
+        <div class="candle">
+          <div class="candle-wax">
+            <div class="wax-reflection"></div>
+            <div class="wax-reflection-top"></div>
+          </div>
+          <div class="candle-reflection"></div>
+          <div class="flame">
+            <div class="flame-in"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shelf-three">
+    <div class="shelf shadow">
+      <div class="shelf-hooks"></div>
+      <div class="base"></div>
+      <div class="spider-group">
+        <div class="thread"></div>
+        <div class="spider">
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+        </div>
+      </div>
+      <div class="books">
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book-up"></div>
+      </div>
+      <div class="candy-bowl">
+        <div class="candy-bowl-top"></div>
+      </div>
+    </div>
+    <div class="shelf">
+      <div class="shelf-hooks"></div>
+      <div class="base"></div>
+      <div class="spider-group">
+        <div class="thread"></div>
+        <div class="spider">
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+          <div class="spider-leg"></div>
+        </div>
+      </div>
+      <div class="books">
+        <div class="book">
+          <div class="details"></div>
+        </div>
+        <div class="book">
+          <div class="details"></div>
+        </div>
+        <div class="book">
+          <div class="details"></div>
+        </div>
+        <div class="book-up">
+          <div class="details"></div>
+        </div>
+      </div>
+      <div class="candy-bowl">
+        <div class="candy-bowl-top"></div>
+        <div class="candy-bowl-in">
+          <div class="candy-1"></div>
+          <div class="candy-1"></div>
+          <div class="candy-1"></div>
+          <div class="candy-1"></div>
+          <div class="candy-2">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-2">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-2">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-2">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-3"></div>
+          <div class="candy-3"></div>
+          <div class="candy-3"></div>
+          <div class="candy-3"></div>
+          <div class="candy-4">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-4">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-4">
+            <div class="candy-reflection"></div>
+          </div>
+          <div class="candy-4">
+            <div class="candy-reflection"></div>
+          </div>
+        </div>
+        <div class="candy-bowl-reflection"></div>
+      </div>
+    </div>
+  </div>
+  <div class="witch shadow">
+    <div class="middle"></div>
+    <div class="right-arm">
+      <div class="bottle bottle-1">
+        <div class="bowl">
+          <div class="bowl-in"></div>
+        </div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-top">
+          <div class="pink-liquid"></div>
+        </div>
+      </div>
+      <div class="right-hand"></div>
+    </div>
+    <div class="head-group">
+      <div class="hair-back">
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+      </div>
+      <div class="witch-head"></div>
+      <div class="hat">
+        <div class="hat-top">
+          <div class="hat-top-in"></div>
+        </div>
+        <div class="hat-band"></div>
+        <div class="hat-bottom"></div>
+      </div>
+    </div>
+  </div>
+  <div class="witch">
+    <div class="bottom"></div>
+    <div class="middle"></div>
+    <div class="right-arm">
+      <div class="bottle bottle-1">
+        <div class="bowl">
+          <div class="bowl-in">
+            <div class="liquid"></div>
+            <div class="bottle-reflection"></div>
+          </div>
+        </div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-top">
+          <div class="pink-liquid"></div>
+        </div>
+      </div>
+      <div class="right-hand"></div>
+    </div>
+    <div class="head-group">
+      <div class="neck"></div>
+      <div class="hair-back">
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="hair"></div>
+        <div class="witch-ears">
+          <div class="witch-ear"></div>
+          <div class="witch-ear"></div>
+        </div>
+      </div>
+      <div class="witch-head">
+        <div class="cheeks"></div>
+        <div class="eyes"></div>
+        <div class="eyes"></div>
+        <div class="mouth"></div>
+        <div class="mouth-hidden"></div>
+        <div class="hair-front"></div>
+      </div>
+      <div class="hat">
+        <div class="hat-top">
+          <div class="hat-top-in"></div>
+        </div>
+        <div class="hat-band"></div>
+        <div class="hat-stars">
+          <div class="hat-star"></div>
+          <div class="hat-star"></div>
+          <div class="hat-star"></div>
+        </div>
+        <div class="hat-band-top"></div>
+        <div class="hat-bottom"></div>
+      </div>
+    </div>
+  </div>
+  <div class="light"></div>
+  <div class="cauldron shadow">
+    <div class="left-arm"></div>
+    <div class="stick-group">
+      <div class="stick"></div>
+      <div class="hand"></div>
+    </div>
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <div class="cauldron-top"></div>
+  </div>
+  <div class="cauldron">
+    <div class="left-arm"></div>
+    <div class="stick-group">
+      <div class="stick"></div>
+      <div class="hand"></div>
+    </div>
+    <div class="handle"></div>
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <div class="cauldron-top"></div>
+  </div>
+  <div class="window-group shadow">
+    <div class="window"></div>
+  </div>
+  <div class="window-group">
+    <div class="window">
+      <div class="window-reflections"></div>
+      <div class="window-reflections"></div>
+      <div class="window-reflections">     </div>
+      <div class="window-in">
+        <div class="ghost-group">
+          <div class="ghost">
+            <div class="bottom">
+              <div class="bottom-part"></div>
+              <div class="bottom-part"></div>
+              <div class="bottom-part"></div>
+            </div>
+            <div class="eyes"></div>
+          </div>
+        </div>
+        <div class="moon">
+          <div class="craters"></div>
+        </div>
+        <div class="stars">
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cat highlight">
+      <div class="cat-head">
+        <div class="ear">
+          <div class="ear-in"></div>
+        </div>
+        <div class="ear">
+          <div class="ear-in"></div>
+        </div>
+      </div>
+      <div class="cat-body"></div>
+      <div class="cat-paw"></div>
+      <div class="cat-neck">
+        <div class="neck">
+          <div class="neck">
+            <div class="neck">
+              <div class="neck">
+                <div class="neck">
+                  <div class="neck">
+                    <div class="neck">
+                      <div class="neck">
+                        <div class="neck">           </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cat">
+      <div class="cat-head">
+        <div class="ear">
+          <div class="ear-in"></div>
+        </div>
+        <div class="ear">
+          <div class="ear-in"></div>
+        </div>
+      </div>
+      <div class="cat-body"></div>
+      <div class="cat-paw"></div>
+      <div class="cat-neck">
+        <div class="neck">
+          <div class="neck">
+            <div class="neck">
+              <div class="neck">
+                <div class="neck">
+                  <div class="neck">
+                    <div class="neck">
+                      <div class="neck">
+                        <div class="neck"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cat-tail highlight">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail">
+                <div class="tail">
+                  <div class="tail">
+                    <div class="tail">
+                      <div class="tail last"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cat-tail shadow">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail">
+                <div class="tail">
+                  <div class="tail">
+                    <div class="tail">
+                      <div class="tail last"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cat-tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail">
+                <div class="tail">
+                  <div class="tail">
+                    <div class="tail">
+                      <div class="tail last"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="broom shadow">
+    <div class="broom-stick">
+      <div class="bat">
+        <div class="bat-legs"></div>
+        <div class="bat-body"></div>
+        <div class="bat-wing"></div>
+        <div class="bat-wing"></div>
+        <div class="bat-ear"></div>
+        <div class="bat-ear"></div>
+      </div>
+    </div>
+    <div class="broom-hook"></div>
+    <div class="broom-hook"></div>
+    <div class="broom-hair">
+      <div class="broom-hair-top"></div>
+      <div class="broom-hair-bottom"></div>
+      <div class="broom-hair-band"></div>
+    </div>
+  </div>
+  <div class="broom">
+    <div class="broom-stick">
+      <div class="broom-stick-shadow"></div>
+      <div class="bat">
+        <div class="bat-legs"></div>
+        <div class="bat-body"></div>
+        <div class="bat-wing"></div>
+        <div class="bat-wing"></div>
+        <div class="bat-ear"></div>
+        <div class="bat-ear"></div>
+      </div>
+    </div>
+    <div class="broom-hook"></div>
+    <div class="broom-hook"></div>
+    <div class="broom-hair">
+      <div class="broom-hair-top"></div>
+      <div class="broom-hair-bottom"></div>
+      <div class="broom-lines"></div>
+      <div class="broom-hair-bottom-reflection"></div>
+      <div class="broom-hair-band"></div>
+      <div class="broom-details"></div>
+      <div class="broom-details"></div>
+    </div>
+  </div>
+  <div class="pumpkins shadow">
+    <div class="pumpkin">
+      <div class="top"></div>
+    </div>
+    <div class="pumpkin">
+      <div class="top"></div>
+    </div>
+  </div>
+  <div class="pumpkins">
+    <div class="pumpkin">
+      <div class="top"></div>
+    </div>
+    <div class="pumpkin">
+      <div class="top"></div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

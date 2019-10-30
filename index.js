@@ -1,3 +1,1 @@
-function zzz(){
-	alert("OK");
-}
+//

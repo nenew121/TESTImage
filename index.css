@@ -1,3 +1,23 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #500d78;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 *,
 *:before,
 *:after {
@@ -3163,3 +3183,4 @@
             transform: scale(1.3, 0.3);
   }
 }
+

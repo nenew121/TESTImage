@@ -2,17 +2,20 @@
 <body>
 <div>
 <h1>Test</h1>
-<input type="input" id="tt" value="1234">
+<input type="input" id="tt" value="1234" onchange="input()">
 <input type="date" id="date" onchange="getDate()">
 </div>
 </body>
 </html>
 
 <script>
-$(function() {
-    alert("Ready");
-});
+/*$(document).ready(function(){
+alert("Ready Js");
+});*/
 function getDate() {
-  alert("I am an alert box!" + $("#tt").val());
+  alert("Change Date");
+}
+function input() {
+  alert("text");
 }
 </script>

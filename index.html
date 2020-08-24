@@ -5,10 +5,14 @@
 <input type="text" id="tt" value="1234">
 <input type="date" id="date" onchange="getDate()">
 </div>
-<script>
-function getDate() {
-  alert("I am an alert box!");
-}
-</script>
 </body>
 </html>
+
+<script>
+$(function() {
+    alert("Ready");
+});
+function getDate() {
+  alert("I am an alert box!" + $("#tt").val);
+}
+</script>

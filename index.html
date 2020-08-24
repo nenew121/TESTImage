@@ -1,7 +1,7 @@
 <html>
 <body>
 <div>
-<h1>Test11</h1>
+<h1>Test111</h1>
 <input type="input" id="tt" value="1234" onchange="input()">
 <input type="date" id="date" onchange="getDate()">
 </div>
@@ -9,13 +9,13 @@
 </html>
 
 <script>
-$(document).ready(function(){
+/*$(document).ready(function(){
 alert("Ready Js");
-});
+});*/
 function getDate() {
   alert("Change Date");
 }
 function input() {
-  alert("text");
+  alert("text " + $("#tt").val());
 }
 </script>

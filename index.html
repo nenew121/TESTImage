@@ -2,7 +2,7 @@
 <body>
 <div>
 <h1>Test</h1>
-<input type="text" id="tt" value="1234">
+<input type="input" id="tt" value="1234">
 <input type="date" id="date" onchange="getDate()">
 </div>
 </body>
@@ -13,6 +13,6 @@ $(function() {
     alert("Ready");
 });
 function getDate() {
-  alert("I am an alert box!" + $("#tt").val);
+  alert("I am an alert box!" + $("#tt").val());
 }
 </script>

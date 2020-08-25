@@ -1,5 +1,8 @@
 $(document).ready(function(){
   alert("Ready");
+  $("#search").click(function() {
+    alert("Date " + $("#date").val());
+  });
 });
 function getDate() {
 var txt = document.getElementById("date").value
@@ -8,7 +11,4 @@ var txt = document.getElementById("date").value
 }
 function input() {
   alert("Text1 " + $("#tt").val());
-}
-function search() {
-  alert("Search date " + $("#date").val();
 }

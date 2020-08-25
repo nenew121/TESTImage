@@ -45,7 +45,7 @@ if(date != "") {
     success:function(data)
     {
      //$('#employee_name').text(data.name);
-     alert(data.name);
+     alert(data.name + " : " + data.date);
     },
     error: function(){
       alert("json not found image");

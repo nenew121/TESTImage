@@ -11,6 +11,7 @@ function Search() {
     url: "https://shielded-mesa-66786.herokuapp.com/data.json",
     dataType: "json",
     success: function(data) {
+      var dr = data[$("#date").val()];
       alert("Change Date " + $("#date").val());
     },
     error: function(){

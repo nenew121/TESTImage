@@ -1,12 +1,4 @@
 <?php
-$myObj->name = "John";
-$myObj->age = 30;
-$myObj->city = "New York";
-
-$myJSON = json_encode($myObj);
-
-echo $myJSON;
-
 /*function getImage2() {
   $image = 'http://images.itracki.com/2011/06/favicon.png';
   $imageData = base64_encode(file_get_contents($image));
@@ -14,12 +6,15 @@ echo $myJSON;
 return $src; 
 }*/
 
-/*function getImage() {
+function getImage() {
   if(isset($_POST["date"]))
   {
-    var date = $_POST["date"];
-    $data["name"] = "Hi ".date;
-    echo json_encode($data);
+    $date = $_POST["date"];
+    $myObj->name = "John";
+    $myObj->date = $date;
+    $myJSON = json_encode($myObj);
+
+    echo $myJSON;
   }
-}*/
+}
 ?>

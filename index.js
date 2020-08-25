@@ -22,16 +22,16 @@ function Search() {
             "<td>" + e.email + "</td>"+
             "<td>" + e.phone + "</td>"+
           "</tr>");*/
-          txt = "<tr>"+
+          txt += "<tr>"+
             "<td>" + (i+=1) +"</td>"+
             "<td>" + e.number + "</td>"+
             "<td>" + e.name + "</td>"+
             "<td>" + e.email + "</td>"+
             "<td>" + e.phone + "</td>"+
           "</tr>";
-          document.getElementById('txt').innerHTML = txt;
-          //alert("Change Date " + $("#date").val());
         }
+        //alert("Change Date " + $("#date").val());
+        document.getElementById('txt').innerHTML = txt;
       });
     },
     error: function(){

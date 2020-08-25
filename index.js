@@ -1,12 +1,12 @@
 $(document).ready(function(){
   //alert("Ready");
   $("#search").click(function() {
-    //Search();
+    Search();
     getImage();
   });
 });
 
-/*function Search() {
+function Search() {
   $.ajax({
     type: "Get",
     url: "https://shielded-mesa-66786.herokuapp.com/data.json",
@@ -32,7 +32,7 @@ $(document).ready(function(){
       alert("json not found search");
     }
   });
-}*/
+}
 
 function getImage() {
   var date = $("#date").val();

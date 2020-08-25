@@ -1,12 +1,10 @@
 $(document).ready(function(){
   alert("Ready");
   $("#search").click(function() {
-    alert("Date " + $("#date").val());
+    Search();
   });
 });
-function getDate() {
-var txt = document.getElementById("date").value
-  //alert("Change Date " + txt);
+function Search() {
   alert("Change Date " + $("#date").val());
 }
 function input() {

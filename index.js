@@ -4,9 +4,8 @@ $(document).ready(function(){
 function getDate() {
 var txt = document.getElementById("date").value
   //alert("Change Date " + txt);
-  alert("Change Date " + $("#tt").val());
+  alert("Change Date " + $("#date").val());
 }
 function input() {
-var txt = document.getElementById("tt").value
-  alert("text " + txt);
+  alert("Text1 " + $("#tt").val());
 }

@@ -1,9 +1,7 @@
 <style>
-.table {
-  .css-table {
-    background-color: #b3c4cac2 !important;
-    height: 350px !important;
-    overflow-y: scroll !important;
-  }
+div.css-table {
+  background-color: #b3c4cac2 !important;
+  height: 350px !important;
+  overflow-y: scroll !important;
 }
 </style>

@@ -9,3 +9,6 @@ var txt = document.getElementById("date").value
 function input() {
   alert("Text1 " + $("#tt").val());
 }
+function search() {
+  alert("Search date " + $("#date").val();
+}

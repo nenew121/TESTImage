@@ -15,7 +15,7 @@ function Search() {
       data.forEach(e => {
         if (e.date == $("#date").val()) {
           $("tbody").append("<tr>"+
-            "<td>" + (i+1) +"</td>"+
+            "<td>" + (i+=1) +"</td>"+
             "<td>" + e.number + "</td>"+
             "<td>" + e.name + "</td>"+
             "<td>" + e.email + "</td>"+

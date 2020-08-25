@@ -2,7 +2,7 @@
 if(isset($_POST["date"]))
 {
   var date = $_POST["date"];
-  $data["name"] = "Hi ".date;
+  $data["name"] = "Hi";
   echo json_encode($data);
 }
 
@@ -13,12 +13,12 @@ if(isset($_POST["date"]))
 return $src; 
 }*/
 
-function getImage() {
+/*function getImage() {
   if(isset($_POST["date"]))
   {
     var date = $_POST["date"];
     $data["name"] = "Hi ".date;
     echo json_encode($data);
   }
-}
+}*/
 ?>

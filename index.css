@@ -1,1 +1,4 @@
-//
+.css-table {
+  overflow: auto;
+  height: 550px;
+}

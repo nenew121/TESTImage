@@ -6,6 +6,7 @@
 return $src; 
 }*/
 
+getImage();
 function getImage() {
   if(isset($_POST["date"]))
   {

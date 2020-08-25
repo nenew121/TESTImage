@@ -5,6 +5,7 @@ $(document).ready(function(){
   });
 });
 function Search() {
+  //$("#div1").load("demo_test.txt");
   alert("Change Date " + $("#date").val());
 }
 function input() {

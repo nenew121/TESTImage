@@ -1,6 +1,6 @@
-/*$(document).ready(function(){
-alert("Ready Js");
-});*/
+$(document).ready(function(){
+  alert("Ready");
+});
 function getDate() {
 var txt = document.getElementById("date").value
   alert("Change Date " + txt);

@@ -1,11 +1,11 @@
 <?php
-echo "sjdjfjejfjsksk";
+//echo "sjdjfjejfjsksk";
 /*if(isset($_POST["date"]))
-{
+{*/
   var date = $_POST["date"];
   $data["name"] = "Hi";
   echo json_encode($data);
-}*/
+/*}*/
 
 /*function getImage2() {
   $image = 'http://images.itracki.com/2011/06/favicon.png';

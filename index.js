@@ -6,7 +6,7 @@ $(document).ready(function(){
   });
 });
 
-function Search() {
+/*function Search() {
   $.ajax({
     type: "Get",
     url: "https://shielded-mesa-66786.herokuapp.com/data.json",
@@ -32,12 +32,12 @@ function Search() {
       alert("json not found search");
     }
   });
-}
+}*/
 
 function getImage() {
   var date = $("#date").val();
   $.ajax({
-    url:"https://shielded-mesa-66786.herokuapp.com/Controller.php",
+    url:"https://shielded-mesa-66786.herokuapp.com/controller.php",
     method:"POST",
     data:{date:date},
     dataType:"JSON",

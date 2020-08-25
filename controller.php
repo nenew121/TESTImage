@@ -2,7 +2,8 @@
 //echo "sjdjfjejfjsksk";
 /*if(isset($_POST["date"]))
 {*/
-  var date = $_POST["date"];
+  //var date = $_POST["date"];
+  var date = "ok";
   $data["name"] = "Hi";
   echo json_encode($data);
 /*}*/

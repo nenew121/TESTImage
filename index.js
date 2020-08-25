@@ -1,13 +1,24 @@
 $(document).ready(function(){
-  alert("Ready");
+  //alert("Ready");
   $("#search").click(function() {
     Search();
   });
 });
+
 function Search() {
-  //$("#div1").load("demo_test.txt");
-  alert("Change Date " + $("#date").val());
+  $.ajax({
+    type: "Get",
+    url: "https://shielded-mesa-66786.herokuapp.com/data.json",
+    dataType: "json",
+    success: function(data) {
+      alert("Change Date " + $("#date").val());
+    },
+    error: function(){
+      alert("json not found");
+    }
+  });
 }
+
 function input() {
   alert("Text1 " + $("#tt").val());
 }

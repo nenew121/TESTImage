@@ -12,15 +12,24 @@ function Search() {
     dataType: "json",
     success: function(data) {
       var i = 0;
+      var txt = "";
       data.forEach(e => {
         if (e.date == $("#date").val()) {
-          $("tbody").append("<tr>"+
+          /*$("tbody").append("<tr>"+
             "<td>" + (i+=1) +"</td>"+
             "<td>" + e.number + "</td>"+
             "<td>" + e.name + "</td>"+
             "<td>" + e.email + "</td>"+
             "<td>" + e.phone + "</td>"+
-          "</tr>");
+          "</tr>");*/
+          txt = "<tr>"+
+            "<td>" + (i+=1) +"</td>"+
+            "<td>" + e.number + "</td>"+
+            "<td>" + e.name + "</td>"+
+            "<td>" + e.email + "</td>"+
+            "<td>" + e.phone + "</td>"+
+          "</tr>";
+          document.getElementById('txt').innerHTML = txt;
           //alert("Change Date " + $("#date").val());
         }
       });

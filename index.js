@@ -29,7 +29,7 @@ function Search() {
       });
     },
     error: function(){
-      alert("json not found");
+      alert("json not found search");
     }
   });
 }
@@ -47,7 +47,7 @@ function getImage() {
      alert(data.name);
     },
     error: function(){
-      alert("json not found");
+      alert("json not found image");
     }
   });
 }

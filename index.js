@@ -36,6 +36,7 @@ $(document).ready(function(){
 
 function getImage() {
   var date = $("#date").val();
+if(date != "") {
   $.ajax({
     url:"https://shielded-mesa-66786.herokuapp.com/controller.php",
     method:"POST",
@@ -50,6 +51,9 @@ function getImage() {
       alert("json not found image");
     }
   });
+} else {
+  alert("no data");
+}
 }
 
 function input() {

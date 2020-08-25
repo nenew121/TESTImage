@@ -18,7 +18,7 @@ function Search() {
             "<td>" + (i+1) +"</td>"+
             "<td>" + e.number + "</td>"+
             "<td>" + e.name + "</td>"+
-            "<td>" + e.email + </td>"+
+            "<td>" + e.email + "</td>"+
             "<td>" + e.phone + "</td>"+
           "</tr>");
           alert("Change Date " + $("#date").val());

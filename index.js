@@ -11,15 +11,15 @@ function Search() {
     url: "https://shielded-mesa-66786.herokuapp.com/data.json",
     dataType: "json",
     success: function(data) {
+      var i = 0;
       data.forEach(e => {
         if (e.date == $("#date").val()) {
           $("tbody").append("<tr>"+
-            "<td>1</td>"+
-            "<td>897654654</td>"+
-            "<td>John</td>"+
-            "<td>Doe</td>"+
-            "<td>john@example.com</td>"+
-            "<td>0800000000</td>"+
+            "<td>" + (i+1) +"</td>"+
+            "<td>" + e.number + "</td>"+
+            "<td>" + e.name + "</td>"+
+            "<td>" + e.email + </td>"+
+            "<td>" + e.phone + "</td>"+
           "</tr>");
           alert("Change Date " + $("#date").val());
         }

@@ -1,7 +1,8 @@
 $(document).ready(function(){
   //alert("Ready");
   $("#search").click(function() {
-    Search();
+    //Search();
+    getImage();
   });
 });
 
@@ -15,13 +16,6 @@ function Search() {
       var txt = "";
       data.forEach(e => {
         if (e.date == $("#date").val()) {
-          /*$("tbody").append("<tr>"+
-            "<td>" + (i+=1) +"</td>"+
-            "<td>" + e.number + "</td>"+
-            "<td>" + e.name + "</td>"+
-            "<td>" + e.email + "</td>"+
-            "<td>" + e.phone + "</td>"+
-          "</tr>");*/
           txt += "<tr>"+
             "<td>" + (i+=1) +"</td>"+
             "<td>" + e.number + "</td>"+
@@ -33,6 +27,24 @@ function Search() {
         //alert("Change Date " + $("#date").val());
         document.getElementById('txt').innerHTML = txt;
       });
+    },
+    error: function(){
+      alert("json not found");
+    }
+  });
+}
+
+function getImage() {
+  var date = $("#date").val();
+  $.ajax({
+    url:"https://shielded-mesa-66786.herokuapp.com/Controller.php",
+    method:"POST",
+    data:{date:date},
+    dataType:"JSON",
+    success:function(data)
+    {
+     //$('#employee_name').text(data.name);
+     alert(data.name);
     },
     error: function(){
       alert("json not found");

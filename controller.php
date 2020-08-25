@@ -13,9 +13,7 @@ function getImage() {
     $date = $_POST["date"];
     $myObj->name = "John";
     $myObj->date = $date;
-    $myJSON = json_encode($myObj);
-
-    echo $myJSON;
+    echo json_encode($myObj);
   }
 }
 ?>

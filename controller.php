@@ -33,8 +33,8 @@ function getImage() {
 }
 
 function getfile() {
-  //$url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
-  $url = "https://shielded-mesa-66786.herokuapp.com/Image/2020-08-25.png";
+  $url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
+  //$url = "https://shielded-mesa-66786.herokuapp.com/Image/2020-08-25.png";
   $file_name = basename($url);
   //$file_data = file_get_contents($url);
   
@@ -43,12 +43,12 @@ function getfile() {
   
   if($file_name) {
     $myObj->name = strval($file_name);
-    $myObj->date = $src;
+    $myObj->src = $src;
     $myObj->date1 = "date1";
     echo json_encode($myObj);
   } else {
     $myObj->name = "Test";
-    $myObj->date = "date";
+    $myObj->src = "src";
     $myObj->date1 = "date1";
     echo json_encode($myObj);
   }

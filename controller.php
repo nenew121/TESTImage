@@ -22,9 +22,10 @@ function getImage() {
     //$type = mime_content_type($url);
     $types = glob("https://shielded-mesa-66786.herokuapp.com/Image/" . "*.*");
     $type = "Test Type :";
+    $i = 0;
     foreach($types as $dr)
     {
-      $type += $dr;
+      $type += ($i++ . ":" . $dr);
     }
 
     if($file_name) {

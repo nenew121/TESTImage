@@ -1,4 +1,17 @@
 <?php
+if(isset($_POST["fnName"]))
+{
+  switch($_POST["fnName"]) {
+    case 'getImage':
+      getImage();
+    break;
+    default:
+      $myObj->error = "Error switch case";
+      echo json_encode($myObj);
+    break;
+  }
+}
+
 /*function getImage2() {
   $image = 'http://images.itracki.com/2011/06/favicon.png';
   $imageData = base64_encode(file_get_contents($image));
@@ -6,7 +19,6 @@
 return $src; 
 }*/
 
-getImage();
 function getImage() {
   if(isset($_POST["date"]))
   {

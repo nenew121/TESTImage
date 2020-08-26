@@ -6,6 +6,14 @@ $(document).ready(function(){
   });
 });
 
+function Loading(event) {
+  if(event) {
+    $(".loading").css("display", "block");
+  } else {
+    $(".loading").css("display", "none");
+  }
+}
+
 function Search() {
   $.ajax({
     type: "Get",
@@ -35,6 +43,7 @@ function Search() {
 }
 
 function getImage() {
+  Loading(true);
   var fnName = "getImage";
   var date = $("#date").val();
   if(date != "") {
@@ -49,12 +58,15 @@ function getImage() {
          "src='data:image/png;" + data.src.split(";")[1] + "'></div>";
         document.getElementById('ShowImage').innerHTML = txt + txt;
        //$('.ShowImage').text(txt);
+         Loading(false);
       },
       error: function(){
         alert("json not found image");
+        Loading(false);
       }
     });
   } else {
     alert("no data");
+    Loading(false);
   }
 }

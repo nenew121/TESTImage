@@ -22,13 +22,13 @@ function getImage() {
   $type = "";
   foreach($types as $dr)
        {
-        $type += $dr;
+        $type = $dr;
        }
   
   if($file_name) {
     $myObj->name = strval($file_name);
     $myObj->src = $src;
-    $myObj->type = $type;
+    $myObj->type = $types;
     $myObj->date1 = "date1";
     echo json_encode($myObj);
   } else {

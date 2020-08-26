@@ -60,6 +60,7 @@ function getImage() {
          "src='data:image/png;" + data.src.split(";")[1] + "'></div>";
         document.getElementById('ShowImage').innerHTML = txt + txt;
        //$('.ShowImage').text(txt);
+         alert(data.type);
          Loading(false);
       },
       error: function(){

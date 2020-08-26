@@ -48,7 +48,7 @@ if(date != "") {
       var txt = "<img style='display:block; width:100px;height:100px;' id='base64image'"+
        "src='" + data.src + "'";
       document.getElementById('ShowImage').innerHTML = txt;
-     //$('#employee_name').text(data.name);src
+     //$('.ShowImage').text(txt);
     },
     error: function(){
       alert("json not found image");

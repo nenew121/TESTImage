@@ -38,7 +38,7 @@ function getfile() {
   $file_name = basename($url);
   //$file_name,file_get_contents($url)
   if($file_name) {
-    echo 1;
+    echo $file_name;
   } else {
     echo 0;
   }

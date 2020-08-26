@@ -33,7 +33,7 @@ function getImage() {
 }
 
 function getfile() {
-  $url = "https://shielded-mesa-66786.herokuapp.com/Image" . $_POST["date"] . ".php";
+  $url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".php";
   $file_name = basename($url);
   //$file_name,file_get_contents($url)
   if($file_name) {

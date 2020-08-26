@@ -44,11 +44,11 @@ function getfile() {
   if($file_name) {
     $myObj->name = strval($file_name);
     $myObj->date = $file_data;
-    $myObj->src = $src;
+    $myObj->date1 = $src;
   } else {
     $myObj->name = "Test";
     $myObj->date = strval(0);
-    $myObj->src = $src;
+    $myObj->date1 = "date1";
   }
   echo json_encode($myObj);
 }

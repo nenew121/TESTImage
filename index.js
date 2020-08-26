@@ -35,7 +35,7 @@ function Search() {
 }
 
 function getImage() {
-  var fnName = "getImage";
+  var fnName = "getfile";
   var date = $("#date").val();
 if(date != "") {
   $.ajax({

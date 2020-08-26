@@ -36,11 +36,13 @@ function getfile() {
   //$url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
   $url = "https://shielded-mesa-66786.herokuapp.com/Image/2020-08-25.png";
   $file_name = basename($url);
-  //$file_name,file_get_contents($url)
+  $file_data = file_get_contents($file_name);
   if($file_name) {
-    $myObj->date = strval($file_name);
+    $myObj->name = strval($file_name);
+    $myObj->date = $file_data;
     echo json_encode($myObj);
   } else {
+    $myObj->name = "Test";
     $myObj->date = strval(0);
     echo json_encode($myObj);
   }

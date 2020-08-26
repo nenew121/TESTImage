@@ -38,13 +38,13 @@ function getfile() {
   $file_name = basename($url);
   $file_data = file_get_contents($url);
   
-  $imageData = base64_encode(file_get_contents($url));
-  $src = 'data: '.mime_content_type($url).';base64,'.$imageData;
+  /*$imageData = base64_encode(file_get_contents($url));
+  $src = 'data: '.mime_content_type($url).';base64,'.$imageData;*/
   
   if($file_name) {
     $myObj->name = strval($file_name);
     $myObj->date = $file_data;
-    $myObj->date1 = $src;
+    $myObj->date1 = "date1";
   } else {
     $myObj->name = "Test";
     $myObj->date = strval(0);

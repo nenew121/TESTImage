@@ -38,9 +38,11 @@ function getfile() {
   $file_name = basename($url);
   //$file_name,file_get_contents($url)
   if($file_name) {
-    echo strval($file_name);
+    $myObj->date = strval($file_name);
+    echo json_encode($myObj);
   } else {
-    echo strval(0);
+    $myObj->date = strval(0);
+    echo json_encode($myObj);
   }
 }
 ?>

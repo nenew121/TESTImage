@@ -37,14 +37,19 @@ function getfile() {
   $url = "https://shielded-mesa-66786.herokuapp.com/Image/2020-08-25.png";
   $file_name = basename($url);
   $file_data = file_get_contents($url);
+  
+  $imageData = base64_encode(file_get_contents($url));
+  $src = 'data: '.mime_content_type($url).';base64,'.$imageData;
+  
   if($file_name) {
     $myObj->name = strval($file_name);
     $myObj->date = $file_data;
-    echo json_encode($myObj);
+    $myObj->src = $src;
   } else {
     $myObj->name = "Test";
     $myObj->date = strval(0);
-    echo json_encode($myObj);
+    $myObj->src = $src;
   }
+  echo json_encode($myObj);
 }
 ?>

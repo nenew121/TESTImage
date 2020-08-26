@@ -33,15 +33,13 @@ function getImage() {
 }
 
 function getfile() {
-  $directory = "https://shielded-mesa-66786.herokuapp.com/Image"; // dir location
-  if (glob($directory . "*.*") != false)
-  {
-   $filecount = count(glob($directory . "*.*"));
-   echo $filecount;
-  }
-  else
-  {
-   echo 0;
+  $url = "https://shielded-mesa-66786.herokuapp.com/Image" . $_POST["date"] . ".php";
+  $file_name = basename($url);
+  //$file_name,file_get_contents($url)
+  if($file_name) {
+    echo $file_name;
+  } else {
+    echo 0;
   }
 }
 ?>

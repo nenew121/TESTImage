@@ -35,12 +35,13 @@ function Search() {
 }
 
 function getImage() {
+  var fnName = "getImage";
   var date = $("#date").val();
 if(date != "") {
   $.ajax({
     url:"https://shielded-mesa-66786.herokuapp.com/controller.php",
     method:"POST",
-    data:{date:date},
+    data:{fnName: fnName, date: date},
     dataType:"JSON",
     success:function(data)
     {

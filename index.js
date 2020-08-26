@@ -37,28 +37,24 @@ function Search() {
 function getImage() {
   var fnName = "getfile";
   var date = $("#date").val();
-if(date != "") {
-  $.ajax({
-    url:"https://shielded-mesa-66786.herokuapp.com/controller.php",
-    method:"POST",
-    data:{fnName: fnName, date: date},
-    dataType:"JSON",
-    success:function(data)
-    {
-      var txt = "<img style='display:block; width:100px;height:100px;' id='base64image'"+
-       "src='data:image/png;" + data.src.split(";")[1] + "'>";
-      document.getElementById('ShowImage').innerHTML = txt + txt;
-     //$('.ShowImage').text(txt);
-    },
-    error: function(){
-      alert("json not found image");
-    }
-  });
-} else {
-  alert("no data");
-}
-}
-
-function input() {
-  alert("Text1 " + $("#tt").val());
+  if(date != "") {
+    $.ajax({
+      url:"https://shielded-mesa-66786.herokuapp.com/controller.php",
+      method:"POST",
+      data:{fnName: fnName, date: date},
+      dataType:"JSON",
+      success:function(data)
+      {
+        var txt = "<img style='display:block; width:100px;height:100px;' id='base64image'"+
+         "src='data:image/png;" + data.src.split(";")[1] + "'>";
+        document.getElementById('ShowImage').innerHTML = txt + txt;
+       //$('.ShowImage').text(txt);
+      },
+      error: function(){
+        alert("json not found image");
+      }
+    });
+  } else {
+    alert("no data");
+  }
 }

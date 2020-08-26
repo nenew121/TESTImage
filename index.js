@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //alert("Ready");
   $("#search").click(function() {
-    Search();
+    //Search();
     getImage();
   });
 });
@@ -59,7 +59,7 @@ function getImage() {
         var txt = "<div class='row css-ShowImage'><img id='base64image'"+
          "src='data:image/png;" + data.src.split(";")[1] + "'></div>";
         document.getElementById('ShowImage').innerHTML = txt + txt;
-       //$('.ShowImage').text(txt);
+        //$('.ShowImage').text(txt);
          alert(data.name + " : " + data.type);
          Loading(false);
       },

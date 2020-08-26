@@ -47,7 +47,7 @@ if(date != "") {
     {
       var txt = "<img style='display:block; width:100px;height:100px;' id='base64image'"+
        "src='data:image/png;" + data.src.split(";")[1] + "'>";
-      document.getElementById('ShowImage').innerHTML = txt;
+      document.getElementById('ShowImage').innerHTML = txt + txt;
      //$('.ShowImage').text(txt);
     },
     error: function(){

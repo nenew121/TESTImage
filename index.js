@@ -8,9 +8,11 @@ $(document).ready(function(){
 
 function Loading(event) {
   if(event) {
-    $(".loading").css("display", "block");
+    //$(".loading").css("display", "block");
+    $(".loading").attr("style", "display:block")
   } else {
-    $(".loading").css("display", "none");
+    //$(".loading").css("display", "none");
+    $(".loading").attr("style", "display:none")
   }
 }
 

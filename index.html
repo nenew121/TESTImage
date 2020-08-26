@@ -9,6 +9,9 @@
   <script src="index.js"></script>
   <!--<link rel="icon" href="https://shielded-mesa-66786.herokuapp.com/ImageTest.gif" type="image/x-icon">-->
   <style>
+  .row {
+    margin-bottom: 15px;
+  }
   .css-table {
     background-color: #b3c4cac2 !important;
     height: 430px !important;
@@ -17,8 +20,14 @@
   .css-head {
     text-align: center;
   }
-  .row {
-    margin-bottom: 15px;
+  .css-Image {
+    text-align: -webkit-center;
+  }
+  .css-ShowImage {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #b9b9d4;
   }
   ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -60,9 +69,9 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="row css-Image">
     <div class="col-sm-12">
-      <span class="ShowImage" id="ShowImage"></span>
+      <span class="css-ShowImage" id="ShowImage"></span>
     </div>
   </div>
 </div>

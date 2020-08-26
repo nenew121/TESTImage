@@ -56,7 +56,7 @@ function getImage() {
       dataType:"JSON",
       success:function(data)
       {
-        var txt = "<div class='row css-ShowImage'><img id='base64image'"+
+        var txt = "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
          "src='data:image/png;" + data.src.split(";")[1] + "'></div>";
         document.getElementById('ShowImage').innerHTML = txt + txt;
         //$('.ShowImage').text(txt);

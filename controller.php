@@ -21,16 +21,16 @@ function getImage() {
     $src = 'data: '.mime_content_type($url).';base64,'.$imageData;
     //$type = mime_content_type($url);
     $types = glob("https://shielded-mesa-66786.herokuapp.com/Image/" . "*.*");
-    $type = "";
+    $type = "Test Type :";
     foreach($types as $dr)
     {
-      $type = $dr;
+      $type += $dr;
     }
 
     if($file_name) {
       $myObj->name = strval($file_name);
       $myObj->src = $src;
-      $myObj->type = $types;
+      $myObj->type = $type;
       $myObj->date1 = "date1";
       echo json_encode($myObj);
     } else {

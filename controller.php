@@ -45,11 +45,12 @@ function getfile() {
     $myObj->name = strval($file_name);
     $myObj->date = $file_data;
     $myObj->date1 = "date1";
+    echo json_encode($myObj);
   } else {
     $myObj->name = "Test";
     $myObj->date = strval(0);
     $myObj->date1 = "date1";
+    echo json_encode($myObj);
   }
-  echo json_encode($myObj);
 }
 ?>

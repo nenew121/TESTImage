@@ -45,7 +45,7 @@ if(date != "") {
     dataType:"JSON",
     success:function(data)
     {
-      txt += "<img style='display:block; width:100px;height:100px;' id='base64image'"+
+      var txt = "<img style='display:block; width:100px;height:100px;' id='base64image'"+
        "src='" + data.src + "'";
       document.getElementById('ShowImage').innerHTML = txt;
      //$('#employee_name').text(data.name);src

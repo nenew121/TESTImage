@@ -21,7 +21,7 @@ function getImage() {
     $imageData = base64_encode(file_get_contents($url));
     if ($imageData != "") {
       $src = 'data: '.mime_content_type($url).';base64,'.$imageData;
-      $types = glob("https://shielded-mesa-66786.herokuapp.com/Image/" . "*.*");
+      $types = glob("./Image/" . "*.*");
       $type = "Test Type :";
       $i = 0;
       foreach($types as $dr)

@@ -26,7 +26,7 @@ function getImage() {
       $i = 0;
       foreach($types as $dr)
       {
-        $type += ($i++ . ":" . $dr);
+        $type = $i++;
       }
 
       if($file_name) {

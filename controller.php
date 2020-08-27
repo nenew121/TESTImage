@@ -15,7 +15,8 @@ if(isset($_POST["fnName"]))
 function getImage() {
   if(isset($_POST["date"]))
   {
-    $url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
+    //$url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
+    $url = "../Image/" . $_POST["date"] . ".png";
     $file_name = basename($url);
     $imageData = base64_encode(file_get_contents($url));
     if ($imageData != "") {

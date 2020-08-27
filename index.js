@@ -56,11 +56,16 @@ function getImage() {
       dataType:"JSON",
       success:function(data)
       {
-        var txt = "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
-         "src='data:image/png;" + data.src.split(";")[1] + "'></div>";
+        var txt = "";
+        data.images.forEach(e => {
+          txt += "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
+           "src='data:image/png;" + e.split(";")[1] + "'></div>";
+        });
         document.getElementById('ShowImage').innerHTML = txt + txt;
-        //$('.ShowImage').text(txt);
-         alert(data.name + " : " + data.type);
+        /*var txt = "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
+         "src='data:image/png;" + data.src.split(";")[1] + "'></div>";
+        document.getElementById('ShowImage').innerHTML = txt + txt;*/
+         alert(data.name);
          Loading(false);
       },
       error: function(){

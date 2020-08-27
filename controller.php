@@ -22,29 +22,21 @@ function getImage() {
     //if ($imageData != "") {
       //$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
       $arrName = array();
-      $type = "";
-      $file_name = "";
       $files = glob("./Image/" . "*.*");
       foreach($files as $file)
       { 
-        $file_name = basename($file);
-        array_push($arrName, $file_name);
-        //$imageData = base64_encode(file_get_contents($file));
-        //$src = 'data: '.mime_content_type($file).';base64,'.$imageData;
-        $type += $dr;
+        $imageData = base64_encode(file_get_contents($file));
+        $src = 'data: '.mime_content_type($file).';base64,'.$imageData;
+        array_push($arrName, $src);
       }
 
       if($file_name) {
-        $myObj->name = $arrName;
-        //$myObj->src = $src;
-        $myObj->type = $type;
-        $myObj->date1 = "date1";
+        $myObj->name = "Test OK";
+        $myObj->images = $arrName;
         echo json_encode($myObj);
       } else {
         $myObj->name = "Test";
-        //$myObj->src = "src";
-        $myObj->type = "type";
-        $myObj->date1 = "date1";
+        $myObj->images = "images";
         echo json_encode($myObj);
       }
     //}  

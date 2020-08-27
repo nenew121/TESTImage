@@ -59,7 +59,8 @@ function getImage() {
         var txt = "";
         data.images.forEach(e => {
           txt += "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
-           "src='data:image/png;" + e.split(";")[1] + "'></div>";
+           "src='" + e + "'></div>";
+          //"src='data:image/png;" + e.split(";")[1] + "'></div>";
         });
         document.getElementById('ShowImage').innerHTML = txt + txt;
         /*var txt = "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+

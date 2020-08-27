@@ -16,33 +16,38 @@ function getImage() {
   if(isset($_POST["date"]))
   {
     //$url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
-    $url = "./Image/" . $_POST["date"] . ".png";
+    /*$url = "./Image/" . $_POST["date"] . ".png";
     $file_name = basename($url);
-    $imageData = base64_encode(file_get_contents($url));
-    if ($imageData != "") {
-      $src = 'data: '.mime_content_type($url).';base64,'.$imageData;
-      $types = glob("./Image/" . "*.*");
-      $type = "Test Type :";
-      $i = 0;
-      foreach($types as $dr)
-      {
-        $type = $dr;
+    $imageData = base64_encode(file_get_contents($url));*/
+    //if ($imageData != "") {
+      //$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
+      $arrName = array();
+      $type = "";
+      $file_name = "";
+      $files = glob("./Image/" . "*.*");
+      foreach($files as $file)
+      { 
+        $file_name = basename($file);
+        array_push($arrName, $file_name);
+        //$imageData = base64_encode(file_get_contents($file));
+        //$src = 'data: '.mime_content_type($file).';base64,'.$imageData;
+        $type += $dr;
       }
 
       if($file_name) {
-        $myObj->name = strval($file_name);
-        $myObj->src = $src;
+        $myObj->name = $arrName;
+        //$myObj->src = $src;
         $myObj->type = $type;
         $myObj->date1 = "date1";
         echo json_encode($myObj);
       } else {
         $myObj->name = "Test";
-        $myObj->src = "src";
+        //$myObj->src = "src";
         $myObj->type = "type";
         $myObj->date1 = "date1";
         echo json_encode($myObj);
       }
-    }  
+    //}  
   }
 }
 ?>

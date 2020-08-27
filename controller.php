@@ -30,7 +30,7 @@ function getImage() {
         array_push($arrName, $src);
       }
 
-      if($file_name) {
+      if($arrName) {
         $myObj->name = "Test OK";
         $myObj->images = $arrName;
         echo json_encode($myObj);

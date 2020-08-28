@@ -64,6 +64,11 @@ function testDelete() {
       //array_push($arrName1, str_replace("\", "", substr($file, 1, strlen($file))));
       array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
+      if(strpos($file, $_POST["date"])) {
+        $imageData = base64_encode(file_get_contents($file));
+        $src = 'data: '.mime_content_type($file).';base64,'.$imageData;
+        array_push($arrName, $src);
+      }
     //}
   }
   $myObj->mass = "mass delete : ";

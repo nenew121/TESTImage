@@ -61,7 +61,7 @@ function testDelete() {
       //array_push($arrName, file_get_contents($file));
       //array_push($arrName, substr($file, 1, strlen($file)).split("\", $file));
       array_push($arrName, substr($file, 1, strlen($file)));
-      array_push($arrName1, str_replace("\","", substr($file, 1, strlen($file))));
+      //array_push($arrName1, str_replace("\", "", substr($file, 1, strlen($file))));
       array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
     //}
@@ -70,7 +70,7 @@ function testDelete() {
   //$myObj->list = $arrName;
   $myObj->list1 = $arrTypeName;
   $myObj->list2 = $arrName;
-  $myObj->list4 = $arrName1;
+  //$myObj->list4 = $arrName1;
   $myObj->list3 = $txt1;
   //$myObj->list4 = $dir_handle;
   echo json_encode($myObj);

@@ -63,8 +63,9 @@ function testDelete() {
   }
   $myObj->mass = "mass delete : ";
   //$myObj->list = $arrName;
-  $myObj->list2 = $arrTypeName;
-  $myObj->list1 = $txt1;
+  $myObj->list1 = $arrTypeName;
+  $myObj->list2 = $files;
+  $myObj->list3 = $txt1;
   echo json_encode($myObj);
 }
 

@@ -50,9 +50,14 @@ public static function getImage() {
 public static function testDelete() {
   $date = $_POST["date"];
   $files = glob("./Image/$date" . ".*");
+  $txt = "";
   foreach ($files as $file) {
-    unlink($file);
+    if (unlink($file)) {
+      $txt = "OK";
+    }
   }
+  $myObj->mass = "mass delete : " . $txt;
+  echo json_encode($myObj);
 }
 
 public static function deleteDir($dirPath) {

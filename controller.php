@@ -58,7 +58,7 @@ function testDelete() {
     //if (unlink("./Image/".$file)) {
       //array_push($arrName, basename(file_get_contents($file)));
       //array_push($arrName, file_get_contents($file));
-      array_push($arrName, $file);
+      array_push($arrName, substr($file, 1, strlen($file)).split("\", $file));
       array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
     //}

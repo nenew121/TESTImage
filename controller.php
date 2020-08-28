@@ -58,6 +58,7 @@ function testDelete() {
     //if (unlink("./Image/".$file)) {
       //array_push($arrName, basename(file_get_contents($file)));
       //array_push($arrName, file_get_contents($file));
+      array_push($arrName, $file);
       array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
     //}
@@ -65,7 +66,7 @@ function testDelete() {
   $myObj->mass = "mass delete : ";
   //$myObj->list = $arrName;
   $myObj->list1 = $arrTypeName;
-  $myObj->list2 = $files;
+  $myObj->list2 = $arrName;
   $myObj->list3 = $txt1;
   //$myObj->list4 = $dir_handle;
   echo json_encode($myObj);

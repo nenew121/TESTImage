@@ -16,7 +16,7 @@ if(isset($_POST["fnName"]))
   }
 }
 
-public static function getImage() {
+function getImage() {
   if(isset($_POST["date"]))
   {
     //$url = "https://shielded-mesa-66786.herokuapp.com/Image/" . $_POST["date"] . ".png";
@@ -61,7 +61,7 @@ function testDelete() {
   echo json_encode($myObj);
 }
 
-public static function deleteDir($dirPath) {
+/*function deleteDir($dirPath) {
     if (! is_dir($dirPath)) {
         throw new InvalidArgumentException("$dirPath must be a directory");
     }
@@ -77,5 +77,5 @@ public static function deleteDir($dirPath) {
         }
     }
     rmdir($dirPath);
-}
+}*/
 ?>

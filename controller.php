@@ -26,17 +26,21 @@ function getImage() {
     //if ($imageData != "") {
       //$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
       $arrName = array();
+      $arrTypeName = array();
       $files = glob("./Image/" . "*.*");
       foreach($files as $file)
       { 
+        $file_name = basename(file_get_contents($file));
+        array_push($arrName, $file_name);
         $imageData = base64_encode(file_get_contents($file));
         $src = 'data: '.mime_content_type($file).';base64,'.$imageData;
-        array_push($arrName, $src);
+        array_push($arrTypeName, $src);
       }
 
       if($arrName) {
         $myObj->name = "Test OK";
         $myObj->images = $arrName;
+        $myObj->images2 = $arrTypeName;
         echo json_encode($myObj);
       } else {
         $myObj->name = "Test";

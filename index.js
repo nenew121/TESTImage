@@ -83,7 +83,7 @@ function getImage() {
 
 function testdel() {
   Loading(true);
-  var fnName = "testDelete";
+  var fnName = "getImage";
   var date = $("#date").val();
   if(date != "") {
     $.ajax({

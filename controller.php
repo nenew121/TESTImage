@@ -5,6 +5,10 @@ if(isset($_POST["fnName"]))
     case 'getImage':
       getImage();
     break;
+    case 'deleteDir':
+      deleteDir();
+    break;
+      
     default:
       $myObj->error = "Error switch case";
       echo json_encode($myObj);
@@ -40,6 +44,14 @@ public static function getImage() {
         echo json_encode($myObj);
       }
     //}  
+  }
+}
+
+public static function testDelete() {
+  $date = $_POST["date"];
+  $files = glob("./Image/$date" . ".*");
+  foreach ($files as $file) {
+    unlink($file);
   }
 }
 

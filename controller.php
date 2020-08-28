@@ -51,12 +51,13 @@ public static function testDelete() {
   $date = $_POST["date"];
   $files = glob("./Image/$date" . ".*");
   $txt = "";
-  foreach ($files as $file) {
+  /*foreach ($files as $file) {
     if (unlink($file)) {
       $txt = "OK";
     }
-  }
-  $myObj->mass = "mass delete : " . $txt;
+  }*/
+  $myObj->mass = "mass delete : " . $date;
+  $myObj->list = $files;
   echo json_encode($myObj);
 }
 

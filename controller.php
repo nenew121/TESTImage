@@ -49,7 +49,7 @@ function getImage() {
 
 function testDelete() {
   $date = $_POST["date"];
-  $files = glob("./Image/" . "*.*");
+  $files = glob("./Image/" . strval($date) . ".*");
   $arrName = array();
   $arrName1 = array();
   $arrTypeName = array();

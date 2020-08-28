@@ -9,9 +9,9 @@ $(document).ready(function(){
 
 function Loading(event) {
   if (event) {
-    $('#loading').removeClass('hide');
+    $('.loading').removeClass('hide');
   } else {
-    $('#loading').addClass('hide');
+    $('.loading').addClass('hide');
   }
   /*if(event) {
     //$(".loading").css("display", "block");

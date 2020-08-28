@@ -2,7 +2,8 @@ $(document).ready(function(){
   //alert("Ready");
   $("#search").click(function() {
     //Search();
-    getImage();
+    //getImage();
+    testdel();
   });
 });
 
@@ -80,7 +81,7 @@ function getImage() {
   }
 }
 
-function getImage() {
+function testdel() {
   Loading(true);
   var fnName = "testDelete";
   var date = $("#date").val();

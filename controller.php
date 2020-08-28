@@ -55,12 +55,12 @@ function testDelete() {
   $i = 1;
   //$dir_handle = opendir("./");
   foreach ($files as $file) {
-    if (unlink("./Image/".$file)) {
+    //if (unlink("./Image/".$file)) {
       //array_push($arrName, basename(file_get_contents($file)));
       //array_push($arrName, file_get_contents($file));
       array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
-    }
+    //}
   }
   $myObj->mass = "mass delete : ";
   //$myObj->list = $arrName;

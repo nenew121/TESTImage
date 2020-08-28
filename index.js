@@ -8,7 +8,7 @@ $(document).ready(function(){
 });
 
 function Loading(event) {
-  if (event) {
+  if(event) {
     $('.loading').removeClass('hide');
   } else {
     $('.loading').addClass('hide');

@@ -2,8 +2,8 @@ $(document).ready(function(){
   //alert("Ready");
   $("#search").click(function() {
     //Search();
-    //getImage();
-    testdel();
+    getImage();
+    //testdel();
   });
 });
 

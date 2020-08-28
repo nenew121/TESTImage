@@ -50,16 +50,16 @@ function getImage() {
 function testDelete() {
   $date = $_POST["date"];
   $files = glob("./Image/" . "*.*");
-  $txt = "";
+  $arrName = "";
   $i = 1;
   foreach ($files as $file) {
     //if (unlink($file)) {
-      $txt += (mime_content_type($file) . ",");
+      array_push($arrName, mime_content_type($file));
       $txt1 = $i++;
     //}
   }
   $myObj->mass = "mass delete : " . $date;
-  $myObj->list = $txt;
+  $myObj->list = $arrName;
   $myObj->list1 = $txt1;
   echo json_encode($myObj);
 }

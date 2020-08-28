@@ -26,15 +26,12 @@ function getImage() {
     //if ($imageData != "") {
       //$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
       $arrName = array();
-      $arrTypeName = array();
       $files = glob("./Image/" . "*.*");
       foreach($files as $file)
       { 
-        $file_name = basename(file_get_contents($file));
-        array_push($arrName, $file_name);
         $imageData = base64_encode(file_get_contents($file));
         $src = 'data: '.mime_content_type($file).';base64,'.$imageData;
-        array_push($arrTypeName, $src);
+        array_push($arrName, $src);
       }
 
       if($arrName) {
@@ -55,15 +52,18 @@ function testDelete() {
   $date = $_POST["date"];
   $files = glob("./Image/" . "*.*");
   $arrName = array();
+  $arrTypeName = array();
   $i = 1;
   foreach ($files as $file) {
     //if (unlink($file)) {
-      array_push($arrName, mime_content_type($file));
+      array_push($arrName, basename(file_get_contents($file)));
+      array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
     //}
   }
   $myObj->mass = "mass delete : ";
   $myObj->list = $arrName;
+  $myObj->list2 = $arrTypeName;
   $myObj->list1 = $txt1;
   echo json_encode($myObj);
 }

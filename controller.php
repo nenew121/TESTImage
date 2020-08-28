@@ -53,6 +53,7 @@ function testDelete() {
   $arrName = array();
   $arrTypeName = array();
   $i = 1;
+  $dir_handle = opendir("./");
   foreach ($files as $file) {
     //if (unlink($file)) {
       //array_push($arrName, basename(file_get_contents($file)));
@@ -66,6 +67,7 @@ function testDelete() {
   $myObj->list1 = $arrTypeName;
   $myObj->list2 = $files;
   $myObj->list3 = $txt1;
+  $myObj->list4 = $dir_handle;
   echo json_encode($myObj);
 }
 

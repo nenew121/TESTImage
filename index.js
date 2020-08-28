@@ -79,3 +79,29 @@ function getImage() {
     Loading(false);
   }
 }
+
+function getImage() {
+  Loading(true);
+  var fnName = "testDelete";
+  var date = $("#date").val();
+  if(date != "") {
+    $.ajax({
+      url:"https://shielded-mesa-66786.herokuapp.com/controller.php",
+      method:"POST",
+      data:{fnName: fnName, date: date},
+      dataType:"JSON",
+      success:function(data)
+      {
+        alert(data.mass);
+        Loading(false);
+      },
+      error: function(){
+        alert("json not found image");
+        Loading(false);
+      }
+    });
+  } else {
+    alert("no data");
+    Loading(false);
+  }
+}

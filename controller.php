@@ -27,7 +27,7 @@ function getImage() {
       //$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
       $arrName = array();
       $arrName22 = array();
-      $files = glob("./Image/" . strval($date) . ".*");
+      $files = glob("./Image/" . strval($date) . "/*.*");
       foreach($files as $file)
       { 
         $imageData = base64_encode(file_get_contents($file));

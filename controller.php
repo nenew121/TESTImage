@@ -47,9 +47,9 @@ public static function getImage() {
   }
 }
 
-public static function testDelete() {
+function testDelete() {
   $date = $_POST["date"];
-  $files = glob("./Image/$date" . ".*");
+  $files = glob("./Image/" . "*.*");
   $txt = "";
   /*foreach ($files as $file) {
     if (unlink($file)) {

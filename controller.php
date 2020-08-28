@@ -53,7 +53,7 @@ function testDelete() {
   $txt = "";
   foreach ($files as $file) {
     //if (unlink($file)) {
-      $txt += $file;
+      $txt += (mime_content_type($file) . ",");
     //}
   }
   $myObj->mass = "mass delete : " . $date;

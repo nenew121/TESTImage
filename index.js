@@ -8,13 +8,18 @@ $(document).ready(function(){
 });
 
 function Loading(event) {
-  if(event) {
+  if (event) {
+    $('#loading').removeClass('hide');
+  } else {
+    $('#loading').addClass('hide');
+  }
+  /*if(event) {
     //$(".loading").css("display", "block");
     $(".loading").attr("style", "display:block")
   } else {
     //$(".loading").css("display", "none");
     $(".loading").attr("style", "display:none")
-  }
+  }*/
 }
 
 function Search() {

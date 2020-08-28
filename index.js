@@ -1,10 +1,12 @@
 $(document).ready(function(){
+  Loading(true);
   //alert("Ready");
   $("#search").click(function() {
     //Search();
     getImage();
     //testdel();
   });
+  Loading(false);
 });
 
 function Loading(event) {

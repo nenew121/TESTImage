@@ -58,7 +58,7 @@ function testDelete() {
       $txt1 = $i++;
     //}
   }
-  $myObj->mass = "mass delete : " . $date;
+  $myObj->mass = "mass delete : ";
   $myObj->list = $arrName;
   $myObj->list1 = $txt1;
   echo json_encode($myObj);

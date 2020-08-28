@@ -5,8 +5,8 @@ if(isset($_POST["fnName"]))
     case 'getImage':
       getImage();
     break;
-    case 'deleteDir':
-      deleteDir();
+    case 'testDelete':
+      testDelete();
     break;
       
     default:

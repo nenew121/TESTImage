@@ -56,13 +56,13 @@ function testDelete() {
   foreach ($files as $file) {
     //if (unlink($file)) {
       //array_push($arrName, basename(file_get_contents($file)));
-      array_push($arrName, file_get_contents($file));
+      //array_push($arrName, file_get_contents($file));
       array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
     //}
   }
   $myObj->mass = "mass delete : ";
-  $myObj->list = $arrName;
+  //$myObj->list = $arrName;
   $myObj->list2 = $arrTypeName;
   $myObj->list1 = $txt1;
   echo json_encode($myObj);

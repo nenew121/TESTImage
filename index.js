@@ -4,7 +4,9 @@ $(document).ready(function(){
   $("#search").click(function() {
     //Search();
     getImage();
-    //testdel();
+  });
+  $("#deleted").click(function() {
+    testdel();
   });
   Loading(false);
 });

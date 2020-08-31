@@ -8,7 +8,6 @@ if(isset($_POST["fnName"]))
     case 'testDelete':
       testDelete();
     break;
-      
     default:
       $myObj->error = "Error switch case";
       echo json_encode($myObj);

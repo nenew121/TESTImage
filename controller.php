@@ -28,8 +28,8 @@ function getImage() {
       $arrName = array();
       $arrName22 = array();
       $te = array();
-      $tet = $date;
-      $files = glob("./Image/" . $date . "/*.*");
+      $tet = $_POST["date"];
+      $files = glob("./Image/" . $_POST["date"] . "/*.*");
       foreach($files as $file)
       { 
         $imageData = base64_encode(file_get_contents($file));

@@ -57,10 +57,8 @@ function getImage() {
 function testDelete() {
   $files = glob("./Image/" . $_POST["date"] . "/*.*");
   $arrName = array();
-  $arrName1 = array();
   $arrTypeName = array();
   $i = 1;
-  //$dir_handle = opendir("./");
   foreach ($files as $file) {
     if (unlink($file)) {
       $txt1 = $i++;

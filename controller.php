@@ -56,7 +56,6 @@ function getImage() {
 }
 
 function testDelete() {
-  $date = $_POST["date"];
   $files = glob("./Image/" . strval($date) . "/.*");
   $arrName = array();
   $arrName1 = array();
@@ -64,20 +63,20 @@ function testDelete() {
   $i = 1;
   //$dir_handle = opendir("./");
   foreach ($files as $file) {
-    //if (unlink("./Image/".$file)) {
+    if (unlink("./Image/" . $_POST["date"] . "/" .$file)) {
       //array_push($arrName, basename(file_get_contents($file)));
       //array_push($arrName, file_get_contents($file));
       //array_push($arrName, substr($file, 1, strlen($file)).split("\", $file));
-      array_push($arrName, substr($file, 1, strlen($file)));
+      //array_push($arrName, substr($file, 1, strlen($file)));
       //array_push($arrName1, str_replace("\", "", substr($file, 1, strlen($file))));
-      array_push($arrTypeName, mime_content_type($file));
+      //array_push($arrTypeName, mime_content_type($file));
       $txt1 = $i++;
       if(strpos($file, $_POST["date"])) {
         $imageData = base64_encode(file_get_contents($file));
         $src = 'data: '.mime_content_type($file).';base64,'.$imageData;
         array_push($arrName, $src);
       }
-    //}
+    }
   }
   $myObj->mass = "mass delete : ";
   //$myObj->list = $arrName;

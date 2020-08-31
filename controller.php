@@ -28,6 +28,7 @@ function getImage() {
       $arrName = array();
       $arrName22 = array();
       $te = array();
+      $tet = strval($date);
       $files = glob("./Image/" . strval($date) . "/*.*");
       foreach($files as $file)
       { 
@@ -43,6 +44,7 @@ function getImage() {
         $myObj->name = "Test OK";
         $myObj->images = $arrName;
         $myObj->te = $te;
+        $myObj->tet = $tet;
         echo json_encode($myObj);
       } else {
         $myObj->name = "Test";

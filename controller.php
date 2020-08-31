@@ -77,7 +77,7 @@ function testDelete() {
       }*/
     }
   }
-  $myObj->mass = "mass delete : " . $txt1;
+  $myObj->mass = "mass delete : " . $txt1 . " hi";
   //$myObj->list = $arrName;
   $myObj->list1 = $arrTypeName;
   $myObj->list2 = $arrName;

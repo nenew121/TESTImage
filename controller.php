@@ -62,7 +62,7 @@ function testDelete() {
   $i = 1;
   //$dir_handle = opendir("./");
   foreach ($files as $file) {
-    if (unlink("./Image/" . $_POST["date"] . "/" .$file)) {
+    if (unlink($file)) {
       //array_push($arrName, basename(file_get_contents($file)));
       //array_push($arrName, file_get_contents($file));
       //array_push($arrName, substr($file, 1, strlen($file)).split("\", $file));

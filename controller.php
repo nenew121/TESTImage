@@ -48,7 +48,7 @@ function getImage() {
         echo json_encode($myObj);
       } else {
         $myObj->name = "Test";
-        $myObj->images = "images";
+        $myObj->images = $arrName;
         echo json_encode($myObj);
       }
     //}  

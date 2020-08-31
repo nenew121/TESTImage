@@ -27,6 +27,7 @@ function getImage() {
       //$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
       $arrName = array();
       $arrName22 = array();
+      $te = array();
       $files = glob("./Image/" . strval($date) . "/*.*");
       foreach($files as $file)
       { 
@@ -35,11 +36,13 @@ function getImage() {
           $src = 'data: '.mime_content_type($file).';base64,'.$imageData;
           array_push($arrName, $src);
         }
+        array_push($te, $file);
       }
 
       if($arrName) {
         $myObj->name = "Test OK";
         $myObj->images = $arrName;
+        $myObj->te = $te;
         echo json_encode($myObj);
       } else {
         $myObj->name = "Test";

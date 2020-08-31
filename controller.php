@@ -41,13 +41,13 @@ function getImage() {
       }
 
       if($arrName) {
-        $myObj->name = "Test OK";
+        $myObj->name = "Show image";
         $myObj->images = $arrName;
         $myObj->te = $te;
         $myObj->tet = $tet;
         echo json_encode($myObj);
       } else {
-        $myObj->name = "Test";
+        $myObj->name = "No image";
         $myObj->images = $arrName;
         echo json_encode($myObj);
       }

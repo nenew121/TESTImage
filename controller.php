@@ -15,7 +15,7 @@ if(isset($_POST["fnName"]))
   }
 }
 
-  function getImage() {
+function getImage() {
   if(isset($_POST["date"]))
   {
       $arrName = array();

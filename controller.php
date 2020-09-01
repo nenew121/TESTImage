@@ -43,36 +43,16 @@ if(isset($_POST["fnName"]))
   function testDelete() {
     $files = glob("./Image/" . $_POST["date"] . "/*.*");
     $arrName = array();
-    $arrTypeName = array();
     $i = 1;
     foreach ($files as $file) {
       if (unlink($file)) {
         $txt1 = $i++;
       }
     }
-    $myObj->mass = "mass delete : " . $txt1 . " hi" . $files[0];
-    $myObj->list1 = $arrTypeName;
-    $myObj->list2 = $arrName;
-    $myObj->list3 = $txt1;
+    $myObj->mass = "Delete : " . $txt1 . $files[0];
+    $myObj->list1 = $arrName;
+    $myObj->list2 = $txt1;
     echo json_encode($myObj);
   }
-
-  /*function deleteDir($dirPath) {
-      if (! is_dir($dirPath)) {
-          throw new InvalidArgumentException("$dirPath must be a directory");
-      }
-      if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-          $dirPath .= '/';
-      }
-      $files = glob($dirPath . '*', GLOB_MARK);
-      foreach ($files as $file) {
-          if (is_dir($file)) {
-              self::deleteDir($file);
-          } else {
-              unlink($file);
-          }
-      }
-      rmdir($dirPath);
-  }*/
 }
 ?>

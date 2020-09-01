@@ -13,7 +13,8 @@ if(isset($_POST["fnName"]))
       echo json_encode($myObj);
     break;
   }
-  
+}
+
   function getImage() {
   if(isset($_POST["date"]))
   {
@@ -54,5 +55,4 @@ if(isset($_POST["fnName"]))
     $myObj->list2 = $txt1;
     echo json_encode($myObj);
   }
-}
 ?>

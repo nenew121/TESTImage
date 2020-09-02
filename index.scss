@@ -1,11 +1,17 @@
   body {
     background-color: #eef5f9 !important;
   }
+  button {
+    width: 100%;
+  }
   .hide {
       display: none !important;
   }
   .mar_b15 {
     margin-bottom: 15px;
+  }
+  .padd_0 {
+    padding: 0px !important;
   }
   .css-head {
     text-align: center;

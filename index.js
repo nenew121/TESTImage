@@ -2,7 +2,6 @@ $(document).ready(function(){
   Loading(true);
   //alert("Ready");
   $("#search").click(function() {
-    //Search();
     getImage();
   });
   $("#deleted").click(function() {
@@ -13,45 +12,12 @@ $(document).ready(function(){
 
 function Loading(event) {
   if(event) {
+    $("#search").attr("disabled", false);
     $('.loading').removeClass('hide');
   } else {
+    $("#search").attr("disabled", true);
     $('.loading').addClass('hide');
   }
-  /*if(event) {
-    //$(".loading").css("display", "block");
-    $(".loading").attr("style", "display:block")
-  } else {
-    //$(".loading").css("display", "none");
-    $(".loading").attr("style", "display:none")
-  }*/
-}
-
-function Search() {
-  $.ajax({
-    type: "Get",
-    url: "https://shielded-mesa-66786.herokuapp.com/data.json",
-    dataType: "json",
-    success: function(data) {
-      var i = 0;
-      var txt = "";
-      data.forEach(e => {
-        if (e.date == $("#date").val()) {
-          txt += "<tr>"+
-            "<td>" + (i+=1) +"</td>"+
-            "<td>" + e.number + "</td>"+
-            "<td>" + e.name + "</td>"+
-            "<td>" + e.email + "</td>"+
-            "<td>" + e.phone + "</td>"+
-          "</tr>";
-        }
-        //alert("Change Date " + $("#date").val());
-        document.getElementById('txt').innerHTML = txt;
-      });
-    },
-    error: function(){
-      alert("json not found search");
-    }
-  });
 }
 
 function getImage() {

@@ -1,5 +1,4 @@
 var slideIndex = 1;
-showSlides(slideIndex);
 $(document).ready(function(){
   Loading(true);
   //alert("Ready");
@@ -11,7 +10,7 @@ $(document).ready(function(){
   });
   Loading(false);
 });
-
+showSlides(slideIndex);
 function Loading(event) {
   if(event) {
     $("#date").attr("disabled", true);

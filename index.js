@@ -12,10 +12,10 @@ $(document).ready(function(){
 
 function Loading(event) {
   if(event) {
-    $("#search").attr("disabled", false);
+    $("#search").attr("disabled", true);
     $('.loading').removeClass('hide');
   } else {
-    $("#search").attr("disabled", true);
+    $("#search").attr("disabled", false);
     $('.loading').addClass('hide');
   }
 }

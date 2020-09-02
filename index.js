@@ -1,6 +1,6 @@
+var slideIndex = 1;
 $(document).ready(function(){
   Loading(true);
-  var slideIndex = 1;
   showSlides(slideIndex);
   //alert("Ready");
   $("#search").click(function() {

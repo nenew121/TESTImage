@@ -12,9 +12,11 @@ $(document).ready(function(){
 
 function Loading(event) {
   if(event) {
+    $("#date").attr("disabled", true);
     $("#search").attr("disabled", true);
     $('.loading').removeClass('hide');
   } else {
+    $("#date").attr("disabled", false);
     $("#search").attr("disabled", false);
     $('.loading').addClass('hide');
   }

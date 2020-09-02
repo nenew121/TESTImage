@@ -12,13 +12,39 @@
 <body>
 <div class="container">
   <div class="row mar_b15">
+    <div class="col-sm-12">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img_nature_wide.jpg" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="img_snow_wide.jpg" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="img_mountains_wide.jpg" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </div>
     <div class="col-sm-12 css-head">
       <h1>Order</h1>
+    </div>
+    <div class="col-sm-7">
     </div>
     <div class="col-sm-4">
        <input type="date" class="form-control" id="date">
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-1 padd_0">
        <button type="button" class="btn btn-primary" id="search" name="search">Search</button>
     </div>
   </div>

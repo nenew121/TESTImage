@@ -1,6 +1,7 @@
 var slideIndex = 1;
 $(document).ready(function(){
   Loading(true);
+  showSlides(slideIndex);
   //alert("Ready");
   $("#search").click(function() {
     getImage();
@@ -10,7 +11,7 @@ $(document).ready(function(){
   });
   Loading(false);
 });
-showSlides(slideIndex);
+
 function Loading(event) {
   if(event) {
     $("#date").attr("disabled", true);

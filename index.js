@@ -1,7 +1,7 @@
 var slideIndex = 1;
 $(document).ready(function(){
   Loading(true);
-  showSlides(slideIndex);
+  //showSlides(slideIndex);
   //alert("Ready");
   $("#search").click(function() {
     getImage();

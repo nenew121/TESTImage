@@ -10,7 +10,7 @@ $(document).ready(function(){
   $(".picker").on("change", function() {
     var date = $(this).val();
     $(".date").val(date);
-  })
+  });
   Loading(false);
 });
 

@@ -38,12 +38,16 @@ function getImage() {
       dataType:"JSON",
       success:function(data)
       {
-        var txt = "";
-        data.images.forEach(e => {
-          txt += "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
-           "src='" + e + "'></div>";
-        });
-        document.getElementById('ShowImage').innerHTML = txt;
+        if(data.images) {
+          var txt = "";
+          data.images.forEach(e => {
+            txt += "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+
+             "src='" + e + "'></div>";
+          });
+          document.getElementById('ShowImage').innerHTML = txt;
+        } else {
+          alert("ไม่มีข้อมูล");
+        }
          //alert(data.name);
          Loading(false);
       },

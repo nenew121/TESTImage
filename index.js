@@ -11,9 +11,8 @@ $(document).ready(function(){
     var date = $(this).val();
     $(".date").val(date);
   });*/
-  $(".ckdate").on("change", function() {
-    var date = $(this).val();
-    $(".ckdate").val(date);
+  $(function() {
+    $( "#datepicker" ).datepicker();
   });
   Loading(false);
 });

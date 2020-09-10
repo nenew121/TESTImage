@@ -44,7 +44,7 @@ function getImage() {
            "src='" + e + "'></div>";
         });
         document.getElementById('ShowImage').innerHTML = txt;
-         alert(data.name);
+         //alert(data.name);
          Loading(false);
       },
       error: function(){

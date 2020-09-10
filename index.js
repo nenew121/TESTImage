@@ -7,9 +7,13 @@ $(document).ready(function(){
   $("#deleted").click(function() {
     testdel();
   });
-  $(".picker").on("change", function() {
+  /*$(".picker").on("change", function() {
     var date = $(this).val();
     $(".date").val(date);
+  });*/
+  $(".ckdate").on("change", function() {
+    var date = $(this).val();
+    $(".ckdate").val(date);
   });
   Loading(false);
 });

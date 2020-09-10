@@ -15,7 +15,7 @@ $(document).ready(function(){
 });
 
 $(function() {
-    $(".datepicker").datepicker();
+    $("#datepicker").datepicker();
   });
 
 function Loading(event) {

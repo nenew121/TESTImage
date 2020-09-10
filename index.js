@@ -7,16 +7,8 @@ $(document).ready(function(){
   $("#deleted").click(function() {
     testdel();
   });
-  /*$(".picker").on("change", function() {
-    var date = $(this).val();
-    $(".date").val(date);
-  });*/
   Loading(false);
 });
-
-$(function() {
-    $("#datepicker").datepicker();
-  });
 
 function Loading(event) {
   if(event) {

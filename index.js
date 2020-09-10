@@ -53,7 +53,7 @@ function getImage() {
       }
     });
   } else {
-    alert("no data");
+    alert("กรุณาเลือกวันที่");
     Loading(false);
   }
 }

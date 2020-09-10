@@ -38,7 +38,7 @@ function getImage() {
       dataType:"JSON",
       success:function(data)
       {
-        if(data.images.lenght > 0) {
+        if(data.images.length > 0) {
           var txt = "";
           data.images.forEach(e => {
             txt += "<div class='row mar_b15 css-ShowImage'><img id='base64image'"+

@@ -12,7 +12,7 @@ $(document).ready(function(){
     $(".date").val(date);
   });*/
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $(".datepicker").datepicker();
   });
   Loading(false);
 });

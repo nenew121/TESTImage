@@ -11,9 +11,12 @@ $(document).ready(function(){
     var date = $(this).val();
     $(".date").val(date);
   });*/
-  $(".datepicker").datepicker();
   Loading(false);
 });
+
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
 
 function Loading(event) {
   if(event) {
